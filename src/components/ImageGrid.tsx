@@ -18,8 +18,6 @@ export function ImageGrid({ images }: { images: SearchResult[] }) {
             {column.map((result) => (
               <CloudinaryImage
                 key={result.public_id}
-                width="400"
-                height="400"
                 publicId={result.public_id}
                 
               />
