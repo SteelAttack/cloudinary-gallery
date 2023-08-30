@@ -1,13 +1,14 @@
 import { Button } from '@/components/ui/button'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { GalleryIcon } from '../../public/icons/Gallery'
-import { AlbumIcon } from '../../public/icons/Album'
-import { FavoriteIcon } from '../../public/icons/Favorite'
+import { Raleway } from 'next/font/google'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { GalleryIcon } from '@/components/icons/Gallery'
+import { AlbumIcon } from '@/components/icons/Album'
+import { FavoriteIcon } from '@/components/icons/Favorite'
+import UploadButton from './gallery/UploadButton';
 
-const inter = Inter({ subsets: ['latin'] })
+const RalewayFont = Raleway({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -49,24 +50,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body>
-        <div className="border-b ">
-          <div className="flex h-16 items-center px-4 container mx-auto">
+      <body className={RalewayFont.className}>
+        <div className="w-full backdrop-blur-sm fixed z-20">
+          <div className="flex h-16 items-center px-4 mx-auto web-title text-amber-500">
             STIL GALLERY
             <div className="ml-auto flex items-center space-x-4">
-              <Avatar>
+              <UploadButton />
+              {/* <Avatar>
                 <AvatarImage
                   src="https://github.com/SteelAttack.png"
                   alt="@shadcn"
                 />
                 <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
+              </Avatar> */}
             </div>
           </div>
         </div>
         <div className="flex">
-          <SideMenu />
-          <div className={inter.className}>{children}</div>
+          {/* <SideMenu /> */}
+          <div className='w-full px-4 py-2 pt-24'>{children}</div>
         </div>
       </body>
     </html>

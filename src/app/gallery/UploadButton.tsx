@@ -2,8 +2,9 @@
 import { CldUploadButton } from 'next-cloudinary'
 import { UploadResult } from '../page'
 import { Button } from '@/components/ui/button'
-import { UploadIcon } from '../../../public/icons/Upload'
+
 import { useRouter } from 'next/navigation'
+import { UploadIcon } from '@/components/icons/Upload'
 
 export default function UploadButton() {
   const router = useRouter()
@@ -11,15 +12,17 @@ export default function UploadButton() {
   return (
     <Button asChild>
       <div className="flex gap-2">
-        <UploadIcon></UploadIcon>
-
         <CldUploadButton
-          onUploadAdded={(result: UploadResult) => {
-            //setImageId(result.info.public_id)
-            router.refresh()
+          onUpload={() => {
+            setTimeout(() => {
+              router.refresh()
+            }, 2000)
           }}
           uploadPreset="peii6ddf"
-        />
+          className='flex items-center gap-2'
+        >
+          <UploadIcon /> Upload
+        </CldUploadButton>
       </div>
     </Button>
   )
