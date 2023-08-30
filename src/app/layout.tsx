@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { GalleryIcon } from '@/components/icons/Gallery'
 import { AlbumIcon } from '@/components/icons/Album'
 import { FavoriteIcon } from '@/components/icons/Favorite'
-import UploadButton from './gallery/UploadButton';
+import UploadButton from '../components/gallery/UploadButton';
 
 const RalewayFont = Raleway({ subsets: ['latin'] })
 

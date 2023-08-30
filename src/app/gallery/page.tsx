@@ -1,4 +1,4 @@
-import UploadButton from './UploadButton'
+import UploadButton from '../../components/gallery/UploadButton'
 import cloudinary from 'cloudinary'
 import { ImageGrid } from '@/components/ImageGrid'
 
